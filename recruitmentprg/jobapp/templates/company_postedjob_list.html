@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>list</title>
+	 <style>
+        #customers {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 70%;}
+        #customers td, #customers th { border: 1px solid #ddd;padding: 8px;}
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:hover {background-color: #ddd;}
+        #customers th { padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #04AA6D;color: white;}
+    </style>
+</head>
+{% extends "companypages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body>
+<center><br><br>
+<table border="2" id="customers">
+	<h2>Posted Jobs</h2><br>
+	<tr>
+	<th>Job Title</th>
+	<th>Job Description</th>
+	<th>Location</th>
+	<th>Email</th>
+	<th>Delete</th>
+	</tr>
+	{% for i in a %}
+   <tr>
+	 <td>{{i.jobtitle}}</td>
+	   <td>{{i.jobdesc}}</td>
+	   <td>{{i.location}}</td>
+	   <td>{{i.email}}</td>
+	   <td><a href="/deletepost/{{i.id}}">Delete Post</a></td>
+   </tr>
+	{% endfor %}
+
+</table>
+</center>
+</body>
+{% endblock content %}
+</html>

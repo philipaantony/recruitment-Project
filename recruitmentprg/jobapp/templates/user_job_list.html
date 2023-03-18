@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+{% extends "userpages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body>
+<center>
+    <br><br>
+    <h2>APPLY JOB</h2>
+<table>
+
+    {% for i in a %}
+
+<tr>
+    <td><h3><b>{{i.jobtitle}}<b></b></h3></td>
+    </tr>
+    <td>{{i.jobdesc}}</td>
+    <td>Job Type :{{i.jobtype}}</td>
+    <td>Location :{{i.location}}</td>
+   <td>
+   </td>
+   </td> <td>Department :{{i.department}}</td>
+    <tr>
+    <td>No of vacanies :{{i.nov}}</td><tr>
+    <td>Company :{{i.cpname}}</td>
+    <td>Address :{{i.cpdese}}</td>
+    <tr>
+    <td> For Enquire :{{i.email}}</td>
+    <tr></tr>
+</tr>
+    <tr><td>Posted Date :{{i.tdate}}</td>
+     <td>Valid Till :{{i.edate}}</td></tr>
+        <td><h4><b><a href="/apply/{{i.id}}">APPLY HERE</a></b></h4><br><br></td>
+</tr>
+</tr>
+
+   {% endfor %}
+
+</table>
+    </center>
+</body>
+{% endblock content %}
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user update</title>
+</head>
+{% extends "userpages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body><br><br><center>
+<form method="post" enctype="multipart/form-data" class="form-inline" action="/updateuser/">
+ <h3>Edit User Informations</h3>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input class="user-input-btn" type="submit" value="UPDATE">
+</form>
+</center>
+</body>
+{% endblock content %}
+</html>

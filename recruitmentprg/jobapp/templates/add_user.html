@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+    <style>
+      #form-div {
+          background-color: rgb(207, 207, 207);
+          text-align: center;
+          width: 35%;
+          margin: 100px auto;
+          padding: 20px 0;
+          border-radius: 15px;
+          box-shadow: 0 15px 15px rgb(63, 63, 63);
+      }
+
+      #form-div h1{
+          font-size: 50px;
+      }
+
+      .user-input{
+       border-radius: 5px;
+        padding: 20px 5px;
+        margin-bottom: 30px;
+        width: 50%;
+        box-sizing: border-box;
+        border-style: none;
+      }
+
+      .user-input-btn{
+       border-radius: 5px;
+        padding: 20px 5px;
+        margin-bottom: 30px;
+        width: 50%;
+        box-sizing: border-box;
+        border-style: none;
+        background-color: rgb(45, 0, 66);
+        color: white;
+      }
+
+    </style>
+</head>
+ {% extends "homepages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body>
+
+<div id="form-div">
+<form method="post" enctype="multipart/form-data" class="form-inline">
+<h3>USER REGISTRATION</h3><br>
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input class="user-input-btn" type="submit" value="ADD">
+</form>
+</div>
+</body>
+{% endblock content %}
+</html>

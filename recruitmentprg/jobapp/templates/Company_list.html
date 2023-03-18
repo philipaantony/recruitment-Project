@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details</title>
+    <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+{% extends "adminpages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body>
+
+<center>
+    <br>
+    <br>
+    <H2>COMPANY DETAILS</H2>
+    <br>
+<table border="2"  id="customers">
+    <tr>
+        <th>name</th>
+        <th>address</th>
+        <th>phone</th>
+        <th>license no</th>
+        <th>proof
+        <th>Email</th>
+
+    </tr>
+    {% for i in a %}
+
+<tr>
+    <td>{{i.cname}}</td>
+    <td>{{i.caddress}}</td>
+    <td>{{i.cphone}}</td>
+    <td>{{i.clicno}}</td>
+    <td> <img src="{{ i.cphoto.url }}" height="100" width="250"> </td>
+    <td>{{i.cemail}}</td>
+</tr>
+
+   {% endfor %}
+</table>
+</center>
+</body>
+{% endblock content %}
+</html>

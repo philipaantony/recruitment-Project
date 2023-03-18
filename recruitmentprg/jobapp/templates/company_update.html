@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% extends "companypages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body><br>
+<br><center>
+<form method="post" enctype="multipart/form-data" class="form-inline" action="/updatecmp/">
+ <h3>Edit Company Detials</h3>
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input class="user-input-btn" type="submit" value="UPDATE">
+</form>
+</center>
+</body>
+{% endblock content %}
+</html>

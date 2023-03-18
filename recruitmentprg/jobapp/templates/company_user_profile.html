@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user profile</title>
+    <style>
+        #customers {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 80%;}
+        #customers td, #customers th { border: 1px solid #ddd;padding: 8px;}
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:hover {background-color: #ddd;}
+        #customers th { padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #04AA6D;color: white;}
+    </style>
+</head>
+{% extends "companypages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body><center>
+<table border="2"  id="customers"><br><br>
+
+    <h2>Applied Candidates</h2>
+    <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>DOB</th>
+    <th>Phone</th>
+    <th>Aadhar</th>
+    <th>Qualification</th>
+    <th>Work Expirence</th>
+    <th>View Resume</th>
+    <th>Email</th>
+    <th>Gender</th>
+</tr>
+    {% for i in a %}
+
+<tr>
+    <td>{{i.ufirst}}</td>
+    <td>{{i.ulast}}</td>
+    <td>{{i.udob}}</td>
+    <td>{{i.uphone}}</td>
+    <td>{{i.uaadhar}}</td>
+    <td>{{i.uqual}}</td>
+    <td>{{i.uexp}}</td>
+    <td><a href="{{i.ufile.url}}">View Resume</a></td>
+    <td>{{i.uemail}}</td>
+    <td>{{i.ugender}}</td>
+</tr>
+
+   {% endfor %}
+</table>
+</center>
+</body>
+{% endblock content %}
+</html>

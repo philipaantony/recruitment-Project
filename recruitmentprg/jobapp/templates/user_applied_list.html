@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        #customers {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 70%;}
+        #customers td, #customers th { border: 1px solid #ddd;padding: 8px;}
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:hover {background-color: #ddd;}
+        #customers th { padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #04AA6D;color: white;}
+    </style>
+</head>
+{% extends "userpages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body><br><br><center>
+<table border="2" id="customers">
+    <br><br>
+    <h2>APPLIED JOBS</h2>
+   <tr>
+    <th>COMPANY NAME</th>
+    <th>JOB TITLE</th>
+    <th>JOB TYPE</th>
+    <th>EMAIL FOR ENQUIRY</th>
+    <th>STATUS</th>
+    <th>DELETE</th>
+</tr>
+    {% for i in a %}
+<tr>
+
+    <td>{{i.cname}}</td>
+    <td>{{i.jobtitle}}</td>
+    <td>{{i.jobtype}}</td>
+    <td>{{i.email}}</td>
+    <td>{{i.status}}</td>
+
+    <td><a href="/deleteapplication/{{i.id}}">Delete Application</a> </td>
+</tr>
+
+   {% endfor %}
+</table>
+</center>
+</body>
+{% endblock content %}
+</html>

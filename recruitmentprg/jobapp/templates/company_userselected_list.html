@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>selected list</title>
+</head>
+<body>
+<table border="2">
+    {% for i in a %}
+
+<tr>
+    <td>{{i.uname}}</td>
+    <td>{{i.status}}</td>
+    <td><a href="/viewprofile/{{i.uid}}/">view more details</a></td>
+</tr>
+    {% endfor %}
+</table>
+</body>
+</html>

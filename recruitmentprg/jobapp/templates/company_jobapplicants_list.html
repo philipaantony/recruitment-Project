@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #customers {font-family: Arial, Helvetica, sans-serif;border-collapse: collapse;width: 60%;}
+        #customers td, #customers th { border: 1px solid #ddd;padding: 8px;}
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        #customers tr:hover {background-color: #ddd;}
+        #customers th { padding-top: 12px;padding-bottom: 12px;text-align: left;background-color: #04AA6D;color: white;}
+    </style>
+</head>
+{% extends "companypages.html" %}
+{% block title %} Displaying model data {% endblock title %}
+{% block content %}
+<body>
+<center><BR><br>
+<table border="2" id="customers">
+    <h2>APPLIED CANTIDATES</h2>
+  <tr>
+    <th>NAME</th>
+    <th>STATUS</th>
+    <th>SELECT CANTIDATE</th>
+    <th>MORE DETAILS</th>
+</tr>
+    {% for i in a %}
+
+<tr>
+    <td>{{i.uname}}</td>
+    <td>{{i.status}}</td>
+    <td><a href="/select/{{i.uid}}/">select</a></td>
+    <td><a href="/viewprofile/{{i.uid}}/">view more details</a></td>
+</tr>
+    {% endfor %}
+</table>
+</center>
+</body>
+{% endblock content %}
+</html>
